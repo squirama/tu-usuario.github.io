@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stiven Quirama | IIoT Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        tech: {
+                            blue: '#3b82f6',
+                            green: '#10b981',
+                            accent: '#6366f1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ESTILOS DE PANTALLA (MODO SCADA/DARK) */
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(148, 163, 184, 0.1); }
+        
+        /* ESTILOS DE IMPRESIÓN (STRICT A4 CLEAN) */
+        @media print {
+            body { background-color: white !important; color: black !important; padding: 0 !important; font-family: 'Inter', sans-serif !important; }
+            .no-print { display: none !important; }
+            .glass-panel { background: none !important; border: none !important; backdrop-filter: none !important; padding: 0 !important; margin-bottom: 1rem !important; }
+            a { text-decoration: none !important; color: black !important; }
+            .text-tech-blue, .text-tech-green, .text-tech-accent { color: black !important; }
+            .bg-dark-800, .bg-dark-900 { background: white !important; }
+            .border-dark-700 { border-color: #ccc !important; }
+            h1, h2, h3 { color: black !important; page-break-after: avoid; }
+            p, li { color: #333 !important; }
+            @page { margin: 1.5cm; size: A4; }
+            .print-break-avoid { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- BARRA DE ESTADO (NAV) -->
+    <nav class="fixed w-full border-b border-slate-700/50 z-50 bg-dark-900/90 backdrop-blur-md no-print">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex justify-between items-center">
+            <div class="font-mono text-tech-blue font-bold tracking-tighter text-lg">&lt;SQ_DEV /&gt;</div>
+            <div class="flex gap-4 text-xs font-mono">
+                <a href="#stack" class="hover:text-white transition-colors text-slate-400">SYS_STACK</a>
+                <a href="#experience" class="hover:text-white transition-colors text-slate-400">LOG_EXPERIENCE</a>
+                <button onclick="window.print()" class="bg-tech-blue/10 text-tech-blue px-3 py-1 rounded hover:bg-tech-blue hover:text-white transition-all uppercase border border-tech-blue/20">
+                    <i class="fas fa-print mr-2"></i>Print_PDF
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto pt-24 pb-12 px-4 md:px-8 print:pt-0 print:px-0">
+
+        <!-- HEADER TÉCNICO -->
+        <header class="mb-12 print:mb-6 print:border-b-2 print:border-black print:pb-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-2 print:text-black">
+                        STIVEN QUIRAMA
+                    </h1>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-2 py-1 bg-tech-blue/20 text-tech-blue text-xs font-mono font-bold rounded print:bg-gray-200 print:text-black">MANTENIMIENTO 4.0</span>
+                        <span class="px-2 py-1 bg-tech-green/20 text-tech-green text-xs font-mono font-bold rounded print:bg-gray-200 print:text-black">IIoT DEVELOPER</span>
+                    </div>
+                    <p class="text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed print:text-gray-700">
+                        Especialista en <strong>Retrofitting & Edge Computing</strong>. Transformo maquinaria obsoleta en nodos inteligentes conectados. Puente técnico entre la mecánica tradicional (OT) y la analítica de datos (IT).
+                    </p>
+                </div>
+                
+                <!-- Contacto Grid -->
+                <div class="grid grid-cols-1 gap-2 text-sm font-mono text-slate-400 print:text-gray-800 print:text-xs print:grid-cols-2 print:gap-x-8">
+                    <a href="mailto:stivenquirama@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fas fa-envelope text-tech-blue print:text-black"></i> stivenquirama@gmail.com
+                    </a>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-phone text-tech-green print:text-black"></i> +34 630 74 89 03
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-tech-accent print:text-black"></i> Zaragoza, ES
+                    </span>
+                    <a href="https://linkedin.com/in/stiven-quirama-orozco-690b72265" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fab fa-linkedin text-blue-400 print:text-black"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-12 gap-8 print:block">
+
+            <!-- COLUMNA IZQUIERDA: STACK & INFO (3 cols) -->
+            <aside class="md:col-span-4 space-y-6 print:mb-8 print:w-full">
+                
+                <!-- Stack Técnico -->
+                <section id="stack" class="glass-panel p-6 rounded-xl print:border print:border-gray-300 print:p-4">
+                    <h2 class="text-sm font-mono font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-700 pb-2 print:border-gray-300 print:text-black">
+                        // Tech_Stack
+                    </h2>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <p class="text-xs text-tech-blue font-bold mb-2 font-mono print:text-black">HARDWARE & EDGE</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Raspberry Pi 4/5</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">ESP32 / Arduino</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Siemens S7</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">IO-Link</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-tech-green font-bold mb-2 font-mono print:text-black">SOFTWARE & DATA</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Python (OpenCV)</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Docker</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">MQTT</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Node-RED</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-tech-accent font-bold mb-2 font-mono print:text-black">MECÁNICA & CAD</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Fusion 360</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Impresión 3D (FDM)</span>
+                                <span class="px-2 py-1 bg-dark-800 rounded text-xs font-medium border border-slate-700 print:border-gray-400 print:bg-white">Neumática</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Educación -->
+                <section class="glass-panel p-6 rounded-xl print:border print:border-gray-300 print:p-4 print:mt-4">
+                    <h2 class="text-sm font-mono font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-700 pb-2 print:border-gray-300 print:text-black">
+                        // Education
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-sm font-bold text-white print:text-black">Máster IA Aplicada</h3>
+                                <span class="text-[10px] bg-yellow-500/20 text-yellow-400 px-1.5 py-0.5 rounded print:bg-white print:text-black print:border print:border-black">CURSANDO</span>
+                            </div>
+                            <p class="text-xs text-slate-400 print:text-gray-600">Instituto Europeo de Postgrado</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white print:text-black">F.P.I Elaboración Vinos</h3>
+                            <p class="text-xs text-slate-400 print:text-gray-600">IES Joaquín Costa (2014)</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-700 print:border-gray-300">
+                            <p class="text-xs font-mono text-slate-500 mb-1">CERTIFICACIONES:</p>
+                            <ul class="text-xs text-slate-400 space-y-1 print:text-gray-600">
+                                <li>• Prog. Autómatas (60h)</li>
+                                <li>• Electrónica Industrial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </aside>
+
+            <!-- COLUMNA DERECHA: EXPERIENCIA (9 cols) -->
+            <section id="experience" class="md:col-span-8 space-y-6 print:w-full">
+                
+                <h2 class="text-sm font-mono font-bold text-slate-500 mb-4 uppercase tracking-widest border-b border-slate-700 pb-2 print:border-black print:text-black print:mb-6">
+                    // Execution_Log
+                </h2>
+
+                <!-- Job 1 -->
+                <article class="glass-panel p-6 rounded-xl border-l-4 border-l-tech-blue print:border print:border-gray-300 print:border-l-4 print:border-l-black print:p-4 print:mb-4 print-break-avoid">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-white print:text-black">Responsable de Mantenimiento & Digitalización</h3>
+                            <p class="text-sm text-tech-blue font-mono print:text-black">Bodegas Añadas S.A. | Cariñena</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400 bg-dark-800 px-2 py-1 rounded print:bg-white print:text-black print:border print:border-black">Jun 2024 – PRESENTE</span>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-300 list-disc list-inside marker:text-tech-blue print:text-gray-800 print:marker:text-black">
+                        <li><strong class="text-white print:text-black">Sistema MES:</strong> Lideré la eliminación del papel en planta, digitalizando OEE y trazabilidad en tiempo real.</li>
+                        <li><strong class="text-white print:text-black">Infraestructura IIoT:</strong> Desplegué servidor local (Raspberry Pi + Docker) con broker MQTT para centralizar datos de sensores dispares.</li>
+                        <li><strong class="text-white print:text-black">Visión Artificial Low-Cost:</strong> Desarrollé scripts en Python/OpenCV para conteo de botellas y detección de fallos en cápsulas.</li>
+                        <li><strong class="text-white print:text-black">Automatización RPA:</strong> Creé bots para automatizar reportes administrativos, liberando 5h/semana de carga burocrática.</li>
+                    </ul>
+                </article>
+
+                <!-- Job 2 -->
+                <article class="glass-panel p-6 rounded-xl border-l-4 border-l-slate-600 opacity-80 hover:opacity-100 transition-opacity print:opacity-100 print:border print:border-gray-300 print:border-l-4 print:border-l-gray-500 print:p-4 print:mb-4 print-break-avoid">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-white print:text-black">Técnico de Mantenimiento (Lead Select)</h3>
+                            <p class="text-sm text-slate-400 font-mono print:text-gray-600">Pastas Romero S.A.</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 bg-dark-800 px-2 py-1 rounded print:bg-white print:text-black print:border print:border-black">May 2024 – Jun 2024</span>
+                    </div>
+                    <p class="text-sm text-slate-400 italic print:text-gray-700">
+                        Seleccionado para el puesto. Retorno estratégico a Bodegas Añadas por contraoferta para liderar la transformación digital.
+                    </p>
+                </article>
+
+                <!-- Job 3 -->
+                <article class="glass-panel p-6 rounded-xl border-l-4 border-l-slate-600 opacity-80 hover:opacity-100 transition-opacity print:opacity-100 print:border print:border-gray-300 print:border-l-4 print:border-l-gray-500 print:p-4 print:mb-4 print-break-avoid">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-white print:text-black">Técnico de Mantenimiento Industrial</h3>
+                            <p class="text-sm text-slate-400 font-mono print:text-gray-600">Bodegas Añadas S.A.</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500 bg-dark-800 px-2 py-1 rounded print:bg-white print:text-black print:border print:border-black">Abr 2021 – May 2024</span>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-300 list-disc list-inside marker:text-slate-500 print:text-gray-800 print:marker:text-black">
+                        <li><strong>Retrofitting Electrónico:</strong> Modernización de cuadros obsoletos integrando lógica nueva con ESP32/Arduino.</li>
+                        <li><strong>Ingeniería Inversa:</strong> Diseño e impresión 3D de repuestos críticos (soportes, guías) descatalogados por el fabricante.</li>
+                        <li>Mantenimiento correctivo en parque multimarca (Krones, KHS) y resolución de averías neumáticas complejas.</li>
+                    </ul>
+                </article>
+
+                <!-- Historial Resumido -->
+                <div class="pt-4 border-t border-slate-800 text-center print:border-gray-300">
+                    <p class="text-xs font-mono text-slate-500 uppercase tracking-wide print:text-gray-500">
+                        [2014-2021] Historial Operativo: Bodegas Añadas • Grandes Vinos • Decathlon
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
